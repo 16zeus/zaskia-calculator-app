@@ -40,6 +40,7 @@ const handleOperator = (operator) => {
         calculator.operator = operator;
         calculator.waitingForSecondNumber = true;
         calculator.firstNumber = calculator.displayNumber
+        calculator.displayNumber = operator
     } else {
         alert('operator already set!');
     }
