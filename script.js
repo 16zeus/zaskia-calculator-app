@@ -65,7 +65,7 @@ const performaCalculation = () => {
       default:
         alert("operator doesn't already set!");
     }
-    calculator.displayNumber = `${parseFloat(computation.toFixed(7))}`
+    calculator.displayNumber = `${parseFloat(computation.toFixed(5))}`
     calculator.operator = undefined
 }
 const resetCalculator = () => {
