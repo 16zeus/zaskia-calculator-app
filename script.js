@@ -27,16 +27,10 @@ const inputDigit = (digit) => {
         calculator.displayNumber = digit;
         calculator.waitingForSecondNumber = false;
     } else {
-        calculator.displayNumber += digit;
+        calculator.displayNumber = calculator.displayNumber === '0'? digit :calculator.displayNumber + digit
     }
 };
-const inputDecimal = (dot) => {
-    if (calculator.waitingForSecondNumber === true) {
-        calculator.displayNumber = '0.'
-        calculator.waitingForSecondNumber = false;
-        return;
-    }    
-  
+const inputDecimal = (dot) => {  
     if (!calculator.displayNumber.includes(dot)) {
       calculator.displayNumber += dot;
     }
@@ -46,7 +40,6 @@ const handleOperator = (operator) => {
         calculator.operator = operator;
         calculator.waitingForSecondNumber = true;
         calculator.firstNumber = calculator.displayNumber
-        // calculator.displayNumber = '0'
     } else {
         alert('operator already set!');
     }
